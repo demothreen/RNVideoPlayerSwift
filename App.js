@@ -7,16 +7,18 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, NativeModules} from 'react-native';
 
 type Props = {};
 export default class App extends Component<Props> {
 
   handleOnPress = () => {
-
+    let url = "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8";
+    NativeModules.VideoPlayerManager.play(url);
   };
 
   render() {
+    console.log(NativeModules.VideoPlayerManager);
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
